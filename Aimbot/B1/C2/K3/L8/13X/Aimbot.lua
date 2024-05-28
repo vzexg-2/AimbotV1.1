@@ -88,7 +88,7 @@ RunService.RenderStepped:Connect(function()
 
             if isTargetVisible(humanoidRootPart) then
                 local targetCFrame = CFrame.new(Camera.CFrame.Position, humanoidRootPart.Position)
-                Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.1)
+                Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.2) -- Smoothness Value
             end
         end
     end
