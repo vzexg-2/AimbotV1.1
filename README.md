@@ -19,4 +19,6 @@ $$\boxed{\color{GREEN}\ VALUE \space \color{GREEN} :}$$
 
 Loadstring script: 
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/vzexg-2/AimbotV1.1/main/Aimbot/B1/C2/K3/L8/13X/Aimbot.lua'))()
+`loadstring(game:HttpGet('https://raw.githubusercontent.com/vzexg-2/AimbotV1.1/main/Aimbot/B1/C2/K3/L8/13X/Aimbot.lua'))()`
+
+if its not working try copying it manually without the loadstring
