@@ -61,7 +61,6 @@ local function isTargetVisible(target)
     
     local ray = Ray.new(character.Head.Position, (target.Position - character.Head.Position).unit * 500)
     local part, position = workspace:FindPartOnRay(ray, character, false, true)
-    
     return part and part:IsDescendantOf(target.Parent)
 end
 
@@ -88,11 +87,10 @@ RunService.RenderStepped:Connect(function()
 
             if isTargetVisible(humanoidRootPart) then
                 local targetCFrame = CFrame.new(Camera.CFrame.Position, humanoidRootPart.Position)
-                Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.2) -- Smoothness Value
+                Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.2) -- Smoothness Value // (0.1 = Very Smooth / 0.2 = Smooth / 0.4 = Auto Lock)
             end
         end
     end
 end)
 
-print("✅ Aimbot Enabled [1.1 Alpha]")
-print("❗ Works only with FFA Mode.")
+print("ClientSide: Aimbot Enabled [1.1 Alpha]")
