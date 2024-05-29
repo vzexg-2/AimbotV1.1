@@ -1,12 +1,12 @@
 --[[ 
 Created by: @vzexg-2
-Version: 1.1 Alpha
+Version: 1.2 Alpha
 ]]
 
 local StarterGui = game:GetService("StarterGui")
 StarterGui:SetCore("SendNotification", {
     Title = "Loader",
-    Text = "Aimbot Enabled [1.1 Alpha]",
+    Text = "Aimbot Enabled [1.2 Alpha]",
     Duration = 5
 })
 local ESPLib = {}
@@ -146,4 +146,4 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
     end
 end
 
-print("ClientSide: Aimbot Enabled [1.1 Alpha]")
+print("ClientSide: Aimbot Enabled [1.2 Alpha]")
