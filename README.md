@@ -7,7 +7,7 @@ $$\boxed{\color{GREEN}\ VALUE \space \color{GREEN} :}$$
 - 0.1 = Super Smooth (60%) ```I```
 - 0.2 = Smooth (75%)```II```
 - 0.3 = Medium (83%) ```III```
-- 0.4 = Auto Lock (<span style="color:orange;">RISK</span> 90%) ```IV```
+- 0.4 = Auto Lock (Risk! 90%)```IV```
 
 > [!CAUTION]
 > Value higher than that can be easily detected.
