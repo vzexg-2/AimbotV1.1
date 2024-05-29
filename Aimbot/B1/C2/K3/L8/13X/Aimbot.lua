@@ -9,7 +9,7 @@ StarterGui:SetCore("SendNotification", {
     Text = "Aimbot Enabled [1.2 Alpha]",
     Duration = 5
 })
-local ESPLib = {} -- Prams
+local ESPLib = {} -- params
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
@@ -88,7 +88,6 @@ RunService.RenderStepped:Connect(function()
         if closestPlayer and closestPlayer.Character and closestPlayer.Character:FindFirstChild("HumanoidRootPart") then
             local humanoidRootPart = closestPlayer.Character.HumanoidRootPart
             local screenPoint, onScreen = Camera:WorldToViewportPoint(humanoidRootPart.Position)
-
             if isTargetVisible(humanoidRootPart) then
                 local targetCFrame = CFrame.new(Camera.CFrame.Position, humanoidRootPart.Position)
                 Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.2) -- Value
@@ -154,5 +153,4 @@ for _, player in pairs(Players:GetPlayers()) do
     end
 end
 
-print("ClientSide: Aimbot Enabled [1.2 Alpha]")
-print("ClientSide: Script may not work in some games.")
+print("ClientSide: Aimbot Enabled [1.2 Alpha] -- FFA")
