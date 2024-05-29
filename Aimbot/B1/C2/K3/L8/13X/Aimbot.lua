@@ -9,6 +9,7 @@ StarterGui:SetCore("SendNotification", {
     Text = "Aimbot Enabled [1.1 Alpha]",
     Duration = 5
 })
+
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Camera = game:GetService("Workspace").CurrentCamera
@@ -19,7 +20,7 @@ local shortestDistance = math.huge
 local highlight = Instance.new("Highlight")
 highlight.Name = "Highlight"
 
-local function addHighlightToPlayer(player)
+local function addHighlight(player)
     if player.Character and player.Character:FindFirstChild("HumanoidRootPart") and not player.Character.HumanoidRootPart:FindFirstChild("Highlight") then
         local highlightClone = highlight:Clone()
         highlightClone.Adornee = player.Character
@@ -28,10 +29,10 @@ local function addHighlightToPlayer(player)
     end
 end
 
-local function addHighlightsToAllPlayers()
+local function addHighlightALL()
     for _, player in pairs(Players:GetPlayers()) do
         if player ~= LocalPlayer then
-            addHighlightToPlayer(player)
+            addHighlight(player)
         end
     end
 end
@@ -39,7 +40,7 @@ end
 Players.PlayerAdded:Connect(function(player)
     player.CharacterAdded:Connect(function()
         task.wait()
-        addHighlightToPlayer(player)
+        addHighlight(player)
     end)
 end)
 
@@ -53,7 +54,7 @@ Players.PlayerRemoving:Connect(function(playerRemoved)
 end)
 
 RunService.Heartbeat:Connect(function()
-    addHighlightsToAllPlayers()
+    addHighlight()
 end)
 local function isTargetVisible(target)
     local character = LocalPlayer.Character
@@ -87,7 +88,7 @@ RunService.RenderStepped:Connect(function()
 
             if isTargetVisible(humanoidRootPart) then
                 local targetCFrame = CFrame.new(Camera.CFrame.Position, humanoidRootPart.Position)
-                Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.2) -- Smoothness Value // (0.1 = Very Smooth / 0.2 = Smooth / 0.4 = Auto Lock)
+                Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.2) -- Value
             end
         end
     end
