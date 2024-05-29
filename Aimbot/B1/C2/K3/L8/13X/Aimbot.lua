@@ -100,13 +100,11 @@ function ESPLib:CreateESPTracer(params)
     local RunService = game:GetService("RunService")
     local player = game:GetService("Players").LocalPlayer
     local camera = game:GetService("Workspace").CurrentCamera
-
     local Part = params.Part
     local TracerColor = params.TracerColor or Color3.new(255, 255, 255)
 
     local tracerLine = Drawing.new("Line")
     tracerLine.Visible = false
-
     local function updateESPTracer()
         if not Part or not Part:IsA("BasePart") or not Part.Parent then
             tracerLine:Remove()
@@ -147,3 +145,4 @@ for _, player in pairs(game:GetService("Players"):GetPlayers()) do
 end
 
 print("ClientSide: Aimbot Enabled [1.2 Alpha]")
+print("ClientSide: Script may not work in some games.")
