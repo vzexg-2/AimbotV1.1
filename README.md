@@ -3,7 +3,7 @@ Simple aimbot script with smooth transition and 80% Accuracy aim to the closest 
 
 _**To edit the smoothness of the aimbot, edit the files "Aimbot.lua" and then scroll down to line 90 after that scroll right and you will see the value 0.2, thats the default value, below is the recommended value**_
 
-```RECOMMEND VALUE::```
+$$\boxed{\color{GREEN}\ VALUE \space \color{GREEN} :}$$
 - 0.1 = Super Smooth (60%) ```I```
 - 0.2 = Smooth (75%)```II```
 - 0.3 = Medium (83%) ```III```
