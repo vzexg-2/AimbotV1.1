@@ -1,4 +1,5 @@
 # Aimbot V1.1
++ I
 Simple aimbot script with smooth transition and 80% Accuracy aim to the closest players to reduce the chance of getting banned, with highlight esp to all players, only for FFA Mode. 
 
 _**To edit the smoothness of the aimbot, edit the files "Aimbot.lua" and then scroll down to line 93 after that scroll right and you will see the value 0.2, thats the default value, below is the recommended value**_
