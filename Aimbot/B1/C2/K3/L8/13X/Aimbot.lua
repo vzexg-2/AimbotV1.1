@@ -9,7 +9,7 @@ StarterGui:SetCore("SendNotification", {
     Text = "Aimbot Enabled [1.2 Alpha]",
     Duration = 5
 })
-local ESPLib = {}
+local ESPLib = {} -- Prams
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
@@ -42,6 +42,7 @@ Players.PlayerAdded:Connect(function(player)
     player.CharacterAdded:Connect(function()
         task.wait()
         addHighlight(player)
+        ESPLib:CreateESPTracerForPlayer(player)
     end)
 end)
 
@@ -97,14 +98,13 @@ RunService.RenderStepped:Connect(function()
 end)
 
 function ESPLib:CreateESPTracer(params)
-    local RunService = game:GetService("RunService")
-    local player = game:GetService("Players").LocalPlayer
-    local camera = game:GetService("Workspace").CurrentCamera
+    local player = params.player
     local Part = params.Part
     local TracerColor = params.TracerColor or Color3.new(255, 255, 255)
 
     local tracerLine = Drawing.new("Line")
     tracerLine.Visible = false
+
     local function updateESPTracer()
         if not Part or not Part:IsA("BasePart") or not Part.Parent then
             tracerLine:Remove()
@@ -114,11 +114,11 @@ function ESPLib:CreateESPTracer(params)
         local playerPosition = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
         if playerPosition then
             local headPosition = Part.Position + Vector3.new(0, Part.Size.Y / 2, 0)
-            local screenPosition, onScreen = camera:WorldToScreenPoint(headPosition)
+            local screenPosition, onScreen = Camera:WorldToScreenPoint(headPosition)
 
             if onScreen then
-                local tracerStart = camera:WorldToViewportPoint(player.Character.Head.Position)
-                local tracerEnd = camera:WorldToViewportPoint(Part.Position)
+                local tracerStart = Camera:WorldToViewportPoint(LocalPlayer.Character.Head.Position)
+                local tracerEnd = Camera:WorldToViewportPoint(Part.Position)
                 tracerLine.From = Vector2.new(tracerStart.X, tracerStart.Y)
                 tracerLine.To = Vector2.new(tracerEnd.X, tracerEnd.Y)
                 tracerLine.Color = TracerColor
@@ -134,13 +134,23 @@ function ESPLib:CreateESPTracer(params)
 
     RunService.RenderStepped:Connect(updateESPTracer)
 end
-for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-    if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-        local part = player.Character.HumanoidRootPart
-        ESPLib:CreateESPTracer({
-            Part = part,
-            TracerColor = Color3.new(255, 0, 0)
-        })
+
+function ESPLib:CreateESPTracerForPlayer(player)
+    player.CharacterAdded:Connect(function(character)
+        task.wait(1)
+        local part = character:FindFirstChild("HumanoidRootPart")
+        if part then
+            ESPLib:CreateESPTracer({
+                player = player,
+                Part = part,
+                TracerColor = Color3.new(255, 0, 0)
+            })
+        end
+    end)
+end
+for _, player in pairs(Players:GetPlayers()) do
+    if player ~= LocalPlayer then
+        ESPLib:CreateESPTracerForPlayer(player)
     end
 end
 
