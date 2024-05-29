@@ -10,7 +10,7 @@ $$\boxed{\color{GREEN}\ VALUE \space \color{GREEN} :}$$
 - 0.4 = Auto Lock (Risk! 90%)```IV```
 
 > [!CAUTION]
-> Value higher than that can be easily detected.
+> Value higher than 0.3 can be easily detected.
 
 > [!WARNING]
 > _If you're getting banned from the game, it's not my fault but you are, if you want to be pro then don't use script to win_
