@@ -5,8 +5,8 @@ Version: 1.2 Alpha
 
 local StarterGui = game:GetService("StarterGui")
 StarterGui:SetCore("SendNotification", {
-    Title = "Loader",
-    Text = "Aimbot Enabled [1.2 Alpha]",
+    Title = "Client",
+    Text = "Loaded [1.2 Alpha]",
     Duration = 5
 })
 local ESPLib = {} -- params
