@@ -11,7 +11,7 @@ local delay = 2
 local StarterGui = game:GetService("StarterGui")
 StarterGui:SetCore("SendNotification", {
     Title = "Client",
-    Text = "Loaded Third-party software [1.2 Alpha]",
+    Text = "Third-party software [1.2 Alpha]",
     Duration = 5
 })
 wait(delay)
@@ -22,7 +22,7 @@ local LocalPlayer = Players.LocalPlayer
 local Camera = game:GetService("Workspace").CurrentCamera
 local RunService = game:GetService("RunService")
 local closestPlayer
-local shortestDistance = math.huge -- calculate the shortest distance player
+local shortestDistance = math.huge -- calculate the shortest distance player from your character 
 
 local highlight = Instance.new("Highlight")
 highlight.Name = "Highlight"
