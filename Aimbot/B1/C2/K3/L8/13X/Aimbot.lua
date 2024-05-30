@@ -1,14 +1,20 @@
 --[[ 
-Created by: @vzexg-2
-Version: 1.2 Alpha
+___ _  _ _ ____ ___     ___  ____ ____ ___ _   _ 
+ |  |__| | |__/ |  \    |__] |__| |__/  |   \_/  
+ |  |  | | |  \ |__/    |    |  | |  \  |    |   
+                                                 
+
+-- Third-party software, vzexg-2
 ]]
 
+local delay = 2
 local StarterGui = game:GetService("StarterGui")
 StarterGui:SetCore("SendNotification", {
     Title = "Client",
-    Text = "Loaded [1.2 Alpha]",
+    Text = "Loaded Third-party software [1.2 Alpha]",
     Duration = 5
 })
+wait(delay)
 local ESPLib = {} -- params
 
 local Players = game:GetService("Players")
