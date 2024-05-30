@@ -14,14 +14,15 @@ StarterGui:SetCore("SendNotification", {
     Text = "Loaded Third-party software [1.2 Alpha]",
     Duration = 5
 })
-local ESPLib = {} -- params
+wait(delay)
+local ESPLib = {} -- Empty
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Camera = game:GetService("Workspace").CurrentCamera
 local RunService = game:GetService("RunService")
 local closestPlayer
-local shortestDistance = math.huge
+local shortestDistance = math.huge -- calculate the shortest distance player
 
 local highlight = Instance.new("Highlight")
 highlight.Name = "Highlight"
@@ -47,7 +48,7 @@ Players.PlayerAdded:Connect(function(player)
     player.CharacterAdded:Connect(function()
         task.wait()
         addHighlight(player)
-        ESPLib:CreateESPTracerForPlayer(player)
+        ESPLib:CreateTracer(player)
     end)
 end)
 
@@ -139,7 +140,7 @@ function ESPLib:CreateESPTracer(params)
     RunService.RenderStepped:Connect(updateESPTracer)
 end
 
-function ESPLib:CreateESPTracerForPlayer(player)
+function ESPLib:CreateTracer(player)
     player.CharacterAdded:Connect(function(character)
         task.wait(1)
         local part = character:FindFirstChild("HumanoidRootPart")
@@ -154,8 +155,8 @@ function ESPLib:CreateESPTracerForPlayer(player)
 end
 for _, player in pairs(Players:GetPlayers()) do
     if player ~= LocalPlayer then
-        ESPLib:CreateESPTracerForPlayer(player)
+        ESPLib:CreateTracer(player)
     end
 end
-
+print("ClientSide: Created Tracer to (player)")
 print("ClientSide: Aimbot Enabled [1.2 Alpha] -- FFA")
