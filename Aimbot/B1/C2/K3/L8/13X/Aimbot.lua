@@ -14,7 +14,6 @@ StarterGui:SetCore("SendNotification", {
     Text = "Loaded Third-party software [1.2 Alpha]",
     Duration = 5
 })
-wait(delay)
 local ESPLib = {} -- params
 
 local Players = game:GetService("Players")
