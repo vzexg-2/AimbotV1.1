@@ -127,7 +127,7 @@ function ESPLib:CreateESPTracer(params)
                 tracerLine.From = Vector2.new(tracerStart.X, tracerStart.Y)
                 tracerLine.To = Vector2.new(tracerEnd.X, tracerEnd.Y)
                 tracerLine.Color = TracerColor
-                tracerLine.Thickness = 2
+                tracerLine.Thickness = 1
                 tracerLine.Visible = true
             else
                 tracerLine.Visible = false
