@@ -1,7 +1,7 @@
 # Aimbot V1.1
 Simple aimbot script with smooth transition and 80% Accuracy aim to the closest players to reduce the chance of getting banned, with highlight esp to all players, only for FFA Mode. 
 
-_**To edit the smoothness of the aimbot, edit the files "Aimbot.lua" and then scroll down to line 99 after that scroll right and you will see the value 0.2, thats the default value, below is the recommended value**_
+_**To edit the smoothness of the aimbot, edit the files "Aimbot.lua" (Default File) and then scroll down to line 99 after that scroll right and you will see the value 0.2, thats the default value, below is the recommended value**_
 
 $$\boxed{\color{GREEN}\ VALUE \space \color{GREEN} :}$$
 - 0.1 = Super Smooth (60%) ```I```
@@ -19,6 +19,6 @@ $$\boxed{\color{GREEN}\ VALUE \space \color{GREEN} :}$$
 
 Loadstring script: 
 
-`loadstring(game:HttpGet('https://raw.githubusercontent.com/vzexg-2/AimbotV1.1/main/Aimbot/B1/C2/K3/L8/13X/Aimbot.lua'))()`
+`loadstring(game:HttpGet("https://raw.githubusercontent.com/vzexg-2/AimbotV1.1/main/IntegrityProtected_Tester.lua"))()`
 
-if its not working try copying it manually without the loadstring
+Your executor may crash while executing/converting!
