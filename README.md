@@ -19,6 +19,6 @@ $$\boxed{\color{GREEN}\ VALUE \space \color{GREEN} :}$$
 
 Loadstring script: 
 
-`loadstring(game:HttpGet("https://raw.githubusercontent.com/vzexg-2/AimbotV1.1/main/IntegrityProtected_Tester.lua"))()`
+`loadstring(game:HttpGet("https://raw.githubusercontent.com/vzexg-2/AimbotV1.1/main/IntegrityProtected.lua"))()`
 
-Your executor may crash while executing/converting!
+Your executor may crash while executing/converting.
